@@ -22,11 +22,17 @@ class OrdersAdminController extends Controller {
       ->condition("orders_id", $order['id'])
       ->select("lines.*,shipping_lines.method")
       ->select("SUM(price*qty) as total")->one();
+    $tax = $this->db->query("tax_lines")
+      ->innerJoin("lines")->on("lines.id=tax_lines.lines_id")
+      ->condition("orders_id", $order['id'])
+      ->select("lines.*")
+      ->select("SUM(price*qty) as total")->one();
     $arguments = [
       "id" => $id,
       "order" => $order,
       "products" => $products,
-      "shipping" => $shipping
+      "shipping" => $shipping,
+      "tax" => $tax
     ];
     $arguments += $request->getAttribute("route")->getOptions();
     return $this->render("admin/orders/view.html", $arguments);

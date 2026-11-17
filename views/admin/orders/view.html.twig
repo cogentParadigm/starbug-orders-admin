@@ -24,6 +24,7 @@
     <div clas="totals" style="margin:20px 0">
       <div class="total">Subtotal: <strong>{{ helper("priceFormatter").format(products.total) }}</strong></div>
       <div class="total">Shipping: <strong>{{ helper("priceFormatter").format(shipping.total) }}</strong></div>
+      <div class="total">Tax: <strong>{{ helper("priceFormatter").format(tax.total) }}</strong></div>
       <div class="total">Total: <strong>{{ helper("priceFormatter").format(products.total + shipping.total) }}</strong></div>
     </div>
 

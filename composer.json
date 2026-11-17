@@ -13,12 +13,15 @@
     "namespace": "Starbug\\Orders\\Admin"
   },
   "require": {
-    "starbug/orders": "^0.9",
-    "starbug/menus": "^0.9",
     "starbug/admin": "^0.9",
-    "starbug/display": "^0.9",
+    "starbug/api": "^0.9",
     "starbug/db": "^0.12",
+    "starbug/display": "^0.9",
     "starbug/dojo": "^1.1",
+    "starbug/intl": "^0.9",
+    "starbug/menus": "^0.9",
+    "starbug/orders": "^0.9",
+    "starbug/price-formatter": "^0.9.1",
     "starbug/routing": "^1.0"
   },
   "autoload": {
